@@ -21,8 +21,7 @@ export const Wrapper = () => {
     return (
         <>
             <HomePage dispatch = {updateDogsSelected}/>
-            <ResultsPage/>
-            <DisplayAnimal/>
+
         </>
     );  
 
