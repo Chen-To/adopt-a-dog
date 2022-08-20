@@ -81,7 +81,9 @@ export const HomePage = () => {
         </Box>
         {/* APP ITSEF GOES HERE */}
         <Box>
-        
+            <Container align = "center">
+                <DisplayAnimal/>
+            </Container>
         </Box>
 
         </main>
