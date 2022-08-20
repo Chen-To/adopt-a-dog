@@ -13,6 +13,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: "src/home.html",
+            inject: false
         }),
         new ESLintWebpackPlugin({ extensions: ['js', 'jsx', 'ts', 'tsx'] })
     ],
