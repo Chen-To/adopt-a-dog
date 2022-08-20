@@ -40,10 +40,6 @@ export const HomePage = () => {
       <CssBaseline />
       <AppBar position="relative">
         <Toolbar>
-          <CameraIcon sx={{ mr: 2 }} />
-          <Typography variant="h6" color="inherit" noWrap>
-            Album layout
-          </Typography>
         </Toolbar>
       </AppBar>
       <main>
@@ -132,7 +128,7 @@ export const HomePage = () => {
         </Typography>
         <Copyright />
       </Box>
-      {/* End footer */}
+      
     </ThemeProvider>
     );
 }
