@@ -1,6 +1,6 @@
 import React, {useLayoutEffect, useState} from "react";
 import PropTypes from "prop-types";
-import { Card, CardMedia, Container, IconButton } from "@mui/material";
+import { Card, CardContent, CardMedia, CardActions, Typography, IconButton } from "@mui/material";
 import PetsIcon from '@mui/icons-material/Pets';
 import CancelIcon from '@mui/icons-material/Cancel';
 
@@ -24,16 +24,22 @@ export const DisplayAnimal = (props) => {
 
     return (
         <>
-            <Card>
-                <CardMedia component = "img" image = {animalImage}></CardMedia>
-                <Container>
-                    <IconButton>
-                        <CancelIcon/>
-                    </IconButton>
-                    <IconButton>
-                        <PetsIcon/>
-                    </IconButton>
-                </Container>
+            <Card sx = {{ maxWidth: 500 }}>
+                <CardMedia component = "img" height = "600" image = {animalImage}>
+
+                </CardMedia>
+                <CardContent>
+                    <Typography gutterBottom variant = "h5" component = "div">
+                    </Typography>
+                    <CardActions>
+                        <IconButton>
+                            <CancelIcon/>
+                        </IconButton>
+                        <IconButton>
+                            <PetsIcon/>
+                        </IconButton>
+                    </CardActions>
+                </CardContent>
             </Card>
         </>
     );
