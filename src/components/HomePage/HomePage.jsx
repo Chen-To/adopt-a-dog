@@ -77,7 +77,6 @@ export const HomePage = (props) => {
                 justifyContent="center"
                 >
                 <Button onClick = {(e) => handleScroll()} variant="contained">Adopt Now</Button>
-                <Button variant="outlined">Secondary action</Button>
                 </Stack>
             </Container>
         </div>
