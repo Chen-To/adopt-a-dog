@@ -5,10 +5,10 @@ import { ResultsPage } from "./ResultsPage/ResultsPage.jsx";
 const reducer = (state, action) => {
     switch (action.type) {
         case "liked":
-            state.push({photo: action?.photo, breed: action?.breed, liked: true});
+            state.push({photo: action?.photo, breed: action?.breed, subBreed: action?.subBreed, liked: true});
             return state;
         case "disliked": 
-            state.push({photo: action?.photo, breed: action?.breed, liked: false});
+            state.push({photo: action?.photo, breed: action?.breed, subBreed: action?.subBreed, liked: false});
             return state;
         default:
             throw new Error("Invalid Dispatch");
