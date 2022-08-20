@@ -17,6 +17,12 @@ module.exports = {
         new ESLintWebpackPlugin({ extensions: ['js', 'jsx', 'ts', 'tsx'] })
     ],
     devServer: {
+        client: {
+            overlay: {
+                errors: true,
+                warnings: false
+            }
+        },
         port: 3000,
         historyApiFallback: true,
         devMiddleware: {
