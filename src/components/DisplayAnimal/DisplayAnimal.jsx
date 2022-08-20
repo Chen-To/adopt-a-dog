@@ -13,12 +13,8 @@ export const DisplayAnimal = (props) => {
 
     const handleReaction = (reaction) => {
         if (imagesSeen < 100) {
-            const breedMatch = breedRegex.exec(animalImage);
-            if (breedMatch) {
-                const breed = breedMatch?.[1];
-                props.dispatch({type: reaction, photo: animalImage, breed: breed});
-                setImagesSeen(imagesSeen+1);
-            }
+            props.dispatch({type: reaction, photo: animalImage.photo, breed: animalImage.breed});
+            setImagesSeen(imagesSeen+1);
         }
     }
 
@@ -27,7 +23,11 @@ export const DisplayAnimal = (props) => {
             const resp = await fetch("https://dog.ceo/api/breeds/image/random");
             const info = await resp.json();
             if (info.status === "success") {
-                setAnimalImage(info.message);
+                const breedMatch = breedRegex.exec(info.message);
+                if (breedMatch) {
+                    const breed = breedMatch?.[1];
+                    setAnimalImage({photo: info.message, breed: breed});
+                }
             }
         }
         getAnimalImage();
@@ -36,11 +36,11 @@ export const DisplayAnimal = (props) => {
     return (
         <>
             <Card sx = {{ maxWidth: 500, maxHeight: 700 }}>
-                <CardMedia component = "img" height = "540" image = {animalImage} >
+                <CardMedia component = "img" height = "540" image = {animalImage ? animalImage.photo : null} >
                 </CardMedia>
                 <CardContent style={{backgroundColor: ""}}>
                     <Typography gutterBottom variant = "h5" component = "div">
-                        INSERT BREED
+                        {animalImage ? animalImage?.breed ?? "" : ""}
                     </Typography>
                     <CardActions>
                         <IconButton onClick = {(e) => handleReaction("disliked")} color = "error" sx={{ml: 5, mr: 25}}>
