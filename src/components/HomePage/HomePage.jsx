@@ -13,6 +13,7 @@ import PetsIcon from '@mui/icons-material/Pets';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { DisplayAnimal } from "../DisplayAnimal/DisplayAnimal.jsx";
 
+
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
@@ -29,7 +30,6 @@ function Copyright() {
 
 const theme = createTheme();
 
-
 export const HomePage = (props) => {
     const displayAnimalRef = useRef(null);
 
@@ -43,22 +43,18 @@ export const HomePage = (props) => {
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline />
-            <AppBar position="relative">
-                <Toolbar>
-                </Toolbar>
-            </AppBar>
             <main>
           
             {/* Hero unit */}
-            <Box sx={{ p: 7 }} />
-            <div
-                 sx={{
-                     bgcolor: 'background.paper',
-                    
-                     pt: 10,
-                     pb: 10,
-                 }}
+            <div 
+            style={{
+                width: "100%",
+                height: 800,
+                backgroundSize: "cover",
+                backgroundImage: `url(https://wallpaperaccess.com/full/266689.jpg)`
+              }}
             >
+            <Box sx={{ p: 7 }} />
             <Container maxWidth="sm">
                 <Typography
                     component="h1"
