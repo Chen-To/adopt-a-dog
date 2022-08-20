@@ -34,7 +34,7 @@ export const DisplayAnimal = (props) => {
     }, [imagesSeen]);
 
     return (
-        <>
+        <div>
             <Card sx = {{ maxWidth: 500, maxHeight: 700 }}>
                 <CardMedia component = "img" height = "540" image = {animalImage ? animalImage.photo : null} >
                 </CardMedia>
@@ -61,7 +61,7 @@ export const DisplayAnimal = (props) => {
                     </CardActions>
                 </CardContent>
             </Card>
-        </>
+        </div>
     );
 }
 
