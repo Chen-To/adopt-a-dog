@@ -16,6 +16,7 @@ import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import PetsIcon from '@mui/icons-material/Pets';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { DisplayAnimal } from "../DisplayAnimal/DisplayAnimal.jsx";
 
 function Copyright() {
   return (
@@ -38,69 +39,73 @@ const theme = createTheme();
 
 export const HomePage = () => {
     return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <AppBar position="relative">
-        <Toolbar>
-        </Toolbar>
-      </AppBar>
-      <main>
-        {/* Hero unit */}
-        <Box
-          sx={{
-            bgcolor: 'background.paper',
-            pt: 8,
-            pb: 6,
-          }}
-        >
-          <Container maxWidth="sm">
+        <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <AppBar position="relative">
+                <Toolbar>
+                </Toolbar>
+            </AppBar>
+            <main>
+            {/* Hero unit */}
+            <Box
+                sx={{
+                    bgcolor: 'background.paper',
+                    pt: 8,
+                    pb: 6,
+                }}
+            >
+            <Container maxWidth="sm">
+                <Typography
+                    component="h1"
+                    variant="h2"
+                    align="center"
+                    color="text.primary"
+                    gutterBottom
+                >
+                <PetsIcon sx={{ mr: 2, fontSize: 40}} />
+                Adopt A Dog
+                <PetsIcon sx={{ mr: 2, fontSize: 40}} />
+                </Typography>
+                <Typography variant="h5" align="center" color="text.secondary" paragraph>
+                Something short and leading about the collection below—its contents,
+                the creator, etc. Make it short and sweet, but not too short so folks
+                don&apos;t simply skip over it entirely.
+                </Typography>
+                <Stack
+                sx={{ pt: 4 }}
+                direction="row"
+                spacing={2}
+                justifyContent="center"
+                >
+                <Button variant="contained">Main call to action</Button>
+                <Button variant="outlined">Secondary action</Button>
+                </Stack>
+            </Container>
+        </Box>
+        {/* APP ITSEF GOES HERE */}
+        <Box>
+            <Container align = "center">
+                <DisplayAnimal/>
+            </Container>
+        </Box>
+
+        </main>
+      {/* Footer */}
+        <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
+            <Typography variant="h6" align="center" gutterBottom>
+            Footer
+            </Typography>
             <Typography
-              component="h1"
-              variant="h2"
-              align="center"
-              color="text.primary"
-              gutterBottom
+            variant="subtitle1"
+            align="center"
+            color="text.secondary"
+            component="p"
             >
-            <PetsIcon sx={{ mr: 2, fontSize: 40}} />
-             Adopt A Dog   
-             <PetsIcon sx={{ ml: 2, fontSize: 40 }} />
+            Something here to give the footer a purpose!
             </Typography>
-            <Typography variant="h5" align="center" color="text.secondary" paragraph>
-              Something short and leading about the collection below—its contents,
-              the creator, etc. Make it short and sweet, but not too short so folks
-              don&apos;t simply skip over it entirely.
-            </Typography>
-            <Stack
-              sx={{ pt: 4 }}
-              direction="row"
-              spacing={2}
-              justifyContent="center"
-            >
-              <Button variant="contained">Main call to action</Button>
-              <Button variant="outlined">Secondary action</Button>
-            </Stack>
-          </Container>
+            <Copyright />
         </Box>
       
-        {/* APP ITSEF GOES HERE */}
-
-
-      </main>
-      {/* Footer */}
-      <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
-        <Typography variant="h6" align="center" gutterBottom>
-          Footer
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          align="center"
-          color="text.secondary"
-          component="p"
-        >
-          Something here to give the footer a purpose!
-        </Typography>
-      </Box>
-      {/* End footer */}
     </ThemeProvider>
     );
 }
