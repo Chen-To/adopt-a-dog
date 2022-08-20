@@ -1,10 +1,51 @@
-import React from "react";
+import React, { useReducer } from 'react';
+import PropTypes from "prop-types";
+import AppBar from '@mui/material/AppBar';
+import Button from '@mui/material/Button';
+import CameraIcon from '@mui/icons-material/PhotoCamera';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import CssBaseline from '@mui/material/CssBaseline';
+import Grid from '@mui/material/Grid';
+import Stack from '@mui/material/Stack';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import Link from '@mui/material/Link';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import PetsIcon from '@mui/icons-material/Pets';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { DisplayAnimal } from "../DisplayAnimal/DisplayAnimal.jsx";
 
 export const ResultsPage = () => {
     return (
-        <>
-        Hello World
-        </>
+        <Container maxWidth="sm">
+                <Typography
+                    component="h4"
+                    variant="h4"
+                    align="center"
+                    color="text.primary"
+                    gutterBottom
+                >
+                <FavoriteIcon sx={{ mr: 2, fontSize: 25}} />
+                Your Results!
+                <FavoriteIcon sx={{ ml: 2, fontSize: 25}} />
+                </Typography>
+                <Typography variant="h5" align="center" color="text.secondary" paragraph>
+                    Click the button below to access your results and see our recommended breed for you!
+                </Typography>
+                <Stack
+                sx={{ pt: 4 }}
+                direction="row"
+                spacing={2}
+                justifyContent="center"
+                >
+                <Button variant="contained">Get Results!</Button>
+                </Stack>
+            </Container>
     );
 }
 
