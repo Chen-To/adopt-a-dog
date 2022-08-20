@@ -15,6 +15,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
+import PetsIcon from '@mui/icons-material/Pets';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { DisplayAnimal } from "../DisplayAnimal/DisplayAnimal.jsx";
 
@@ -62,12 +63,12 @@ export const HomePage = (props) => {
                     color="text.primary"
                     gutterBottom
                 >
+                <PetsIcon sx={{ mr: 2, fontSize: 40}} />
                 Adopt A Dog
+                <PetsIcon sx={{ ml: 2, fontSize: 40}} />
                 </Typography>
                 <Typography variant="h5" align="center" color="text.secondary" paragraph>
-                Something short and leading about the collection below—its contents,
-                the creator, etc. Make it short and sweet, but not too short so folks
-                don&apos;t simply skip over it entirely.
+                Stuck on deciding the perfect type of dog for you? Welcome to Adopt A Dog, an app to match you with your new furry friend!
                 </Typography>
                 <Stack
                 sx={{ pt: 4 }}
