@@ -5,10 +5,22 @@ import PetsIcon from '@mui/icons-material/Pets';
 import CancelIcon from '@mui/icons-material/Cancel';
 
 const maxNum = 100;
+const breedRegex = /\/breeds\/(.+)\//;
 
 export const DisplayAnimal = (props) => {
     const [animalImage, setAnimalImage] = useState();
-    const [imagesSeen, setImagesSeen] = useState(0);
+    const [imagesSeen, setImagesSeen] = useState(1);
+
+    const handleReaction = (reaction) => {
+        if (imagesSeen < 100) {
+            const breedMatch = breedRegex.exec(animalImage);
+            if (breedMatch) {
+                const breed = breedMatch?.[1];
+                props.dispatch({type: reaction, photo: animalImage, breed: breed});
+                setImagesSeen(imagesSeen+1);
+            }
+        }
+    }
 
     useLayoutEffect(() => {
         const getAnimalImage = async () => {
@@ -16,11 +28,10 @@ export const DisplayAnimal = (props) => {
             const info = await resp.json();
             if (info.status === "success") {
                 setAnimalImage(info.message);
-                setImagesSeen(imagesSeen+1);
             }
         }
         getAnimalImage();
-    }, []);
+    }, [imagesSeen]);
 
     return (
         <>
@@ -32,14 +43,14 @@ export const DisplayAnimal = (props) => {
                         INSERT BREED
                     </Typography>
                     <CardActions>
-                        <IconButton color = "error" sx={{ml: 5, mr: 25}}>
+                        <IconButton onClick = {(e) => handleReaction("disliked")} color = "error" sx={{ml: 5, mr: 25}}>
                             <CancelIcon 
                             style={{
                                 minWidth: "60px",
                                 minHeight: "60px"
                               }}/>
                         </IconButton>
-                        <IconButton color = "success">
+                        <IconButton onClick = {(e) => handleReaction("liked")} color = "success">
                             <PetsIcon 
                             fontSize = "large"
                             style={{
