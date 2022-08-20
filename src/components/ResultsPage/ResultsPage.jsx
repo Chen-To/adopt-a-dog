@@ -23,6 +23,7 @@ import { DisplayAnimal } from "../DisplayAnimal/DisplayAnimal.jsx";
 export const ResultsPage = (props) => {
     return (
         <>
+            <div>HI</div>
         </>
     );
     // return (

@@ -1,4 +1,5 @@
 import React, { useReducer } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HomePage } from "./HomePage/HomePage.jsx";
 import { ResultsPage } from "./ResultsPage/ResultsPage.jsx";
 
@@ -19,8 +20,12 @@ export const Wrapper = () => {
     const [dogsSelected, updateDogsSelected] = useReducer(reducer, []);
     return (
         <>
-            <HomePage dispatch = {updateDogsSelected}/>
-            <ResultsPage dogsSelected = {dogsSelected}/>
+            <BrowserRouter>
+                <Routes>
+                    <Route path = "/" element = {<HomePage dispatch = {updateDogsSelected}/>}/>
+                    <Route path = "/results" element = {<ResultsPage dogsSelected = {dogsSelected}/>}/>
+                </Routes>
+            </BrowserRouter>
         </>
     );  
 
