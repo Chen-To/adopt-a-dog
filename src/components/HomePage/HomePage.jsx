@@ -48,14 +48,16 @@ export const HomePage = (props) => {
                 </Toolbar>
             </AppBar>
             <main>
+          
             {/* Hero unit */}
             <Box sx={{ p: 7 }} />
-            <Box
-                sx={{
-                    bgcolor: 'background.paper',
-                    pt: 8,
-                    pb: 6,
-                }}
+            <div
+                 sx={{
+                     bgcolor: 'background.paper',
+                    
+                     pt: 10,
+                     pb: 10,
+                 }}
             >
             <Container maxWidth="sm">
                 <Typography
@@ -82,7 +84,7 @@ export const HomePage = (props) => {
                 <Button variant="outlined">Secondary action</Button>
                 </Stack>
             </Container>
-        </Box>
+        </div>
         {/* APP ITSEF GOES HERE */}
 
         <Box sx={{ p: 25 }} />
