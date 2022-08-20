@@ -1,6 +1,7 @@
-import React, {useLayoutEffect, useState, useReducer} from "react";
+import React, {useLayoutEffect, useState} from "react";
+import PropTypes from "prop-types";
 
-export const DisplayAnimal = () => {
+export const DisplayAnimal = (props) => {
     const [animalImage, setAnimalImage] = useState();
     
     useLayoutEffect(() => {
@@ -11,7 +12,6 @@ export const DisplayAnimal = () => {
                 setAnimalImage(info.message);
             }
         }
-        console.log("BOB");
         getAnimalImage();
     }, []);
 
@@ -22,5 +22,9 @@ export const DisplayAnimal = () => {
         </div>
     );
 }
+
+DisplayAnimal.propTypes = {
+    dispatch: PropTypes.func
+};
 
 export default DisplayAnimal;

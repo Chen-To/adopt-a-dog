@@ -1,4 +1,5 @@
-import * as React from 'react';
+import React, { useReducer } from 'react';
+import PropTypes from "prop-types";
 import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
 import CameraIcon from '@mui/icons-material/PhotoCamera';
@@ -36,7 +37,7 @@ const theme = createTheme();
 
 
 
-export const HomePage = () => {
+export const HomePage = (props) => {
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline />
@@ -82,7 +83,7 @@ export const HomePage = () => {
         {/* APP ITSEF GOES HERE */}
         <Box>
             <Container align = "center">
-                <DisplayAnimal/>
+                <DisplayAnimal dispatch = {props.dispatch}/>
             </Container>
         </Box>
 
@@ -106,5 +107,9 @@ export const HomePage = () => {
     </ThemeProvider>
     );
 }
+
+HomePage.propTypes = {
+    dispatch: PropTypes.func
+};
 
 export default HomePage;
