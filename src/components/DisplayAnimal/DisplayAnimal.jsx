@@ -25,9 +25,9 @@ export const DisplayAnimal = (props) => {
     return (
         <>
             <Card sx = {{ maxWidth: 500 }}>
-                <CardMedia component = "img" height = "600" image = {animalImage}>
+                <CardMedia component = "img" height = "600" image = {animalImage} >
                 </CardMedia>
-                <CardContent>
+                <CardContent style={{backgroundColor: ""}}>
                     <Typography gutterBottom variant = "h5" component = "div">
                         INSERT BREED
                     </Typography>

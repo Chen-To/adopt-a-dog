@@ -41,6 +41,7 @@ export const HomePage = (props) => {
             </AppBar>
             <main>
             {/* Hero unit */}
+            <Box sx={{ p: 7 }} />
             <Box
                 sx={{
                     bgcolor: 'background.paper',
@@ -75,6 +76,9 @@ export const HomePage = (props) => {
             </Container>
         </Box>
         {/* APP ITSEF GOES HERE */}
+
+        <Box sx={{ p: 25 }} />
+
         <Box>
             <Container align = "center">
                 <DisplayAnimal dispatch = {props.dispatch}/>
