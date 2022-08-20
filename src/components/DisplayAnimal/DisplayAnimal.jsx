@@ -26,10 +26,10 @@ export const DisplayAnimal = (props) => {
         <>
             <Card sx = {{ maxWidth: 500 }}>
                 <CardMedia component = "img" height = "600" image = {animalImage}>
-
                 </CardMedia>
                 <CardContent>
                     <Typography gutterBottom variant = "h5" component = "div">
+                        INSERT BREED
                     </Typography>
                     <CardActions>
                         <IconButton>
