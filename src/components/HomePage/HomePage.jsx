@@ -64,7 +64,7 @@ export const HomePage = () => {
                 >
                 <PetsIcon sx={{ mr: 2, fontSize: 40}} />
                 Adopt A Dog
-                <PetsIcon sx={{ mr: 2, fontSize: 40}} />
+                <PetsIcon sx={{ ml: 2, fontSize: 40}} />
                 </Typography>
                 <Typography variant="h5" align="center" color="text.secondary" paragraph>
                 Something short and leading about the collection below—its contents,
