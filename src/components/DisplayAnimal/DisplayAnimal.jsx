@@ -12,7 +12,7 @@ export const DisplayAnimal = (props) => {
     const [imagesSeen, setImagesSeen] = useState(1);
 
     const handleReaction = (reaction) => {
-        if (imagesSeen < 100) {
+        if (imagesSeen < maxNum) {
             props.dispatch({type: reaction, photo: animalImage.photo, breed: animalImage.breed});
             setImagesSeen(imagesSeen+1);
         }

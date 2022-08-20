@@ -20,33 +20,41 @@ import PetsIcon from '@mui/icons-material/Pets';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { DisplayAnimal } from "../DisplayAnimal/DisplayAnimal.jsx";
 
-export const ResultsPage = () => {
+export const ResultsPage = (props) => {
     return (
-        <Container maxWidth="sm">
-                <Typography
-                    component="h4"
-                    variant="h4"
-                    align="center"
-                    color="text.primary"
-                    gutterBottom
-                >
-                <FavoriteIcon sx={{ mr: 2, fontSize: 25}} />
-                Your Results!
-                <FavoriteIcon sx={{ ml: 2, fontSize: 25}} />
-                </Typography>
-                <Typography variant="h5" align="center" color="text.secondary" paragraph>
-                    Click the button below to access your results and see our recommended breed for you!
-                </Typography>
-                <Stack
-                sx={{ pt: 4 }}
-                direction="row"
-                spacing={2}
-                justifyContent="center"
-                >
-                <Button variant="contained">Get Results!</Button>
-                </Stack>
-            </Container>
+        <>
+        </>
     );
+    // return (
+    //     <Container maxWidth="sm">
+    //             <Typography
+    //                 component="h4"
+    //                 variant="h4"
+    //                 align="center"
+    //                 color="text.primary"
+    //                 gutterBottom
+    //             >
+    //             <FavoriteIcon sx={{ mr: 2, fontSize: 25}} />
+    //             Your Results!
+    //             <FavoriteIcon sx={{ ml: 2, fontSize: 25}} />
+    //             </Typography>
+    //             <Typography variant="h5" align="center" color="text.secondary" paragraph>
+    //                 Click the button below to access your results and see our recommended breed for you!
+    //             </Typography>
+    //             <Stack
+    //             sx={{ pt: 4 }}
+    //             direction="row"
+    //             spacing={2}
+    //             justifyContent="center"
+    //             >
+    //             <Button variant="contained">Get Results!</Button>
+    //             </Stack>
+    //         </Container>
+    // );
+}
+
+ResultsPage.propTypes = {
+    dogsSelected: PropTypes.array
 }
 
 export default ResultsPage;

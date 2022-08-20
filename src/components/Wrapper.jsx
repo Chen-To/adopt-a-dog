@@ -20,7 +20,7 @@ export const Wrapper = () => {
     return (
         <>
             <HomePage dispatch = {updateDogsSelected}/>
-
+            <ResultsPage dogsSelected = {dogsSelected}/>
         </>
     );  
 
