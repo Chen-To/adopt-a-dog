@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useRef } from 'react';
 import PropTypes from "prop-types";
 import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
@@ -30,8 +30,16 @@ function Copyright() {
 const theme = createTheme();
 
 
-
 export const HomePage = (props) => {
+    const displayAnimalRef = useRef(null);
+
+    const handleScroll = () => {
+        if (displayAnimalRef?.current) {
+            displayAnimalRef.current.scrollIntoView({behaviour : "smooth"});
+            console.log("HERE");
+        }
+    }
+
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline />
@@ -70,7 +78,7 @@ export const HomePage = (props) => {
                 spacing={2}
                 justifyContent="center"
                 >
-                <Button variant="contained">Main call to action</Button>
+                <Button onClick = {(e) => handleScroll()} variant="contained">Adopt Now</Button>
                 <Button variant="outlined">Secondary action</Button>
                 </Stack>
             </Container>
@@ -79,7 +87,7 @@ export const HomePage = (props) => {
 
         <Box sx={{ p: 25 }} />
 
-        <Box>
+        <Box ref = {displayAnimalRef}>
             <Container align = "center">
                 <DisplayAnimal dispatch = {props.dispatch}/>
             </Container>

@@ -1,5 +1,4 @@
 import React, { useReducer } from "react";
-import { DisplayAnimal } from "./DisplayAnimal/DisplayAnimal.jsx";
 import { HomePage } from "./HomePage/HomePage.jsx";
 import { ResultsPage } from "./ResultsPage/ResultsPage.jsx";
 
