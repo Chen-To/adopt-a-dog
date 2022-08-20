@@ -20,7 +20,6 @@ export const Wrapper = () => {
     return (
         <>
             <HomePage dispatch = {updateDogsSelected}/>
-            <DisplayAnimal/>
         </>
     );  
 

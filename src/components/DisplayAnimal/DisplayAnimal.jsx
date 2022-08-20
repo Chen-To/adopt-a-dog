@@ -1,12 +1,15 @@
 import React, {useLayoutEffect, useState} from "react";
 import PropTypes from "prop-types";
+import { Card, CardMedia, Container, IconButton } from "@mui/material";
+import PetsIcon from '@mui/icons-material/Pets';
+import CancelIcon from '@mui/icons-material/Cancel';
 
 const maxNum = 100;
 
 export const DisplayAnimal = (props) => {
     const [animalImage, setAnimalImage] = useState();
     const [imagesSeen, setImagesSeen] = useState(0);
-    
+
     useLayoutEffect(() => {
         const getAnimalImage = async () => {
             const resp = await fetch("https://dog.ceo/api/breeds/image/random");
@@ -20,10 +23,19 @@ export const DisplayAnimal = (props) => {
     }, []);
 
     return (
-        <div>
-            <div>TEST</div>
-            <img src = {animalImage}></img>
-        </div>
+        <>
+            <Card>
+                <CardMedia component = "img" image = {animalImage}></CardMedia>
+                <Container>
+                    <IconButton>
+                        <CancelIcon/>
+                    </IconButton>
+                    <IconButton>
+                        <PetsIcon/>
+                    </IconButton>
+                </Container>
+            </Card>
+        </>
     );
 }
 
