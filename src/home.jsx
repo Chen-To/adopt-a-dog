@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 
 const Home = () => {
     return (
-        <div>Hello World</div>
+        <div>Changed the name here.</div>
     );
 }
 
