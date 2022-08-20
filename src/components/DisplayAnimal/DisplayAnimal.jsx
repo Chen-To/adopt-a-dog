@@ -6,6 +6,7 @@ import CancelIcon from '@mui/icons-material/Cancel';
 
 const maxNum = 100;
 const breedRegex = /\/breeds\/(.+)\//;
+const imageSet = new Set();
 
 export const DisplayAnimal = (props) => {
     const [animalImage, setAnimalImage] = useState();
@@ -20,8 +21,17 @@ export const DisplayAnimal = (props) => {
 
     useLayoutEffect(() => {
         const getAnimalImage = async () => {
-            const resp = await fetch("https://dog.ceo/api/breeds/image/random");
-            const info = await resp.json();
+            let resp;
+            let info;
+            let photoStatus = true;
+            while (photoStatus) {
+                resp = await fetch("https://dog.ceo/api/breeds/image/random");
+                info = await resp.json();
+                if (!imageSet.has(info.message)) {
+                    imageSet.add(info.message);
+                    photoStatus = false;
+                }
+            }
             if (info.status === "success") {
                 const breedMatch = breedRegex.exec(info.message);
                 if (breedMatch) {
@@ -34,7 +44,7 @@ export const DisplayAnimal = (props) => {
     }, [imagesSeen]);
 
     return (
-        <div>
+        <>
             <Card sx = {{ maxWidth: 500, maxHeight: 700 }}>
                 <CardMedia component = "img" height = "540" image = {animalImage ? animalImage.photo : null} >
                 </CardMedia>
@@ -61,7 +71,7 @@ export const DisplayAnimal = (props) => {
                     </CardActions>
                 </CardContent>
             </Card>
-        </div>
+        </>
     );
 }
 
