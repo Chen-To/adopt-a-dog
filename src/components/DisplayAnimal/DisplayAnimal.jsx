@@ -32,11 +32,20 @@ export const DisplayAnimal = (props) => {
                         INSERT BREED
                     </Typography>
                     <CardActions>
-                        <IconButton>
-                            <CancelIcon/>
+                        <IconButton color = "error" sx={{ml: 5, mr: 25}}>
+                            <CancelIcon 
+                            style={{
+                                minWidth: "60px",
+                                minHeight: "60px"
+                              }}/>
                         </IconButton>
-                        <IconButton>
-                            <PetsIcon/>
+                        <IconButton color = "success">
+                            <PetsIcon 
+                            fontSize = "large"
+                            style={{
+                                minWidth: "60px",
+                                minHeight: "60px"
+                              }}/>
                         </IconButton>
                     </CardActions>
                 </CardContent>
