@@ -1,8 +1,11 @@
 import React, {useLayoutEffect, useState} from "react";
 import PropTypes from "prop-types";
 
+const maxNum = 100;
+
 export const DisplayAnimal = (props) => {
     const [animalImage, setAnimalImage] = useState();
+    const [imagesSeen, setImagesSeen] = useState(0);
     
     useLayoutEffect(() => {
         const getAnimalImage = async () => {
@@ -10,6 +13,7 @@ export const DisplayAnimal = (props) => {
             const info = await resp.json();
             if (info.status === "success") {
                 setAnimalImage(info.message);
+                setImagesSeen(imagesSeen+1);
             }
         }
         getAnimalImage();
