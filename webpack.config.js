@@ -8,16 +8,25 @@ module.exports = {
         "main": "./src/home.jsx"
     },
     output: {
+        publicPath: "/",
         path: path.join(__dirname, "/dist"),
     },
     plugins: [
         new HtmlWebpackPlugin({
             template: "src/home.html",
+            inject: false
         }),
         new ESLintWebpackPlugin({ extensions: ['js', 'jsx', 'ts', 'tsx'] })
     ],
     devServer: {
+        client: {
+            overlay: {
+                errors: true,
+                warnings: false
+            }
+        },
         port: 3000,
+        historyApiFallback: true,
         devMiddleware: {
             writeToDisk: true
         }
@@ -52,11 +61,15 @@ module.exports = {
             },
             {
                 test: /\.(png|jpe?g|gif)$/,
+                type: "javascript/auto",
                 use: [
                     {
                         loader: "file-loader",
                         options: {
                             limit: 40000,
+                            name: '[name].[ext]',
+                            outputPath: "images/",
+                            publicPath: "./images/",
                         },
                     },
                 ],
