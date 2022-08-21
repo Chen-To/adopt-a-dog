@@ -64,7 +64,7 @@ export const GeneralStatistics = (props) => {
                 </Table>
             </TableContainer>
             <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer" align = "center ">
-                <Link href = "https://www.petfinder.com/" >Find Potential Adoption Opportunities</Link>
+                <Link href = "https://www.petfinder.com/" target = "_blank" >Find Potential Adoption Opportunities</Link>
             </Box>
         </>
     );
