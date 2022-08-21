@@ -75,7 +75,7 @@ export const ResultsPage = (props) => {
             </Container>
             <Container sx={{position: "relative"}}>
               <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" fullWidth = {true} centered >
-                  <Tab icon = {<SummarizeIcon/>} label="Summary" {...a11yProps(0)} />
+                  <Tab icon = {<SummarizeIcon/>} label="Photo Gallery" {...a11yProps(0)} />
                   <Tab icon = {<TableChartTwoToneIcon/>} label="General Statistics" {...a11yProps(1)} />
               </Tabs>
             </Container>
