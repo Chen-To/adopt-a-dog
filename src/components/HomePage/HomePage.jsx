@@ -135,7 +135,7 @@ export const HomePage = (props) => {
             </Typography>
             </Container>
         
-            <Box sx={{ m: 12 }} />
+            <Box sx={{ m: 11 }} />
             <Stack 
                     sx={{ mt: 4 }}
                     direction="row"
