@@ -112,6 +112,9 @@ export const HomePage = (props) => {
                 Click the red X button if the dog is not for you.
             </Typography>
             <Typography variant="h5" align="center" color="text.secondary" sx={{color: 'white'}} paragraph>
+                Click the red hand button to stop your selection.
+            </Typography>
+            <Typography variant="h5" align="center" color="text.secondary" sx={{color: 'white'}} paragraph>
                 At the end, we will determine which breeds you love the most!
             </Typography>
             <Typography variant="h5" align="center" color="text.secondary" sx={{color: 'white'}} paragraph>
@@ -119,10 +122,19 @@ export const HomePage = (props) => {
             </Typography>
             </Container>
         
+            <Box sx={{ p: 3 }} />
+            <Stack
+                    sx={{ pt: 4 }}
+                    direction="row"
+                    spacing={2}
+                    justifyContent="center"
+                    >
+                    <Button onClick = {(e) => handleScroll()} variant="contained">Adopt Now</Button>
+                    </Stack>
 
         {/* APP ITSELF GOES HERE */}
 
-        <Box sx={{ p: 55 }} />
+        <Box sx={{ p: 47 }} />
 
         <Box ref = {displayAnimalRef}>
             <Container align = "center">
@@ -135,7 +147,7 @@ export const HomePage = (props) => {
       {/* Footer */}
         <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
             <Typography variant="h6" align="center" gutterBottom>
-            Footer
+            Adopt A Dog
             </Typography>
             <Typography
             variant="subtitle1"
@@ -143,7 +155,7 @@ export const HomePage = (props) => {
             color="text.secondary"
             component="p"
             >
-            Something here to give the footer a purpose!
+            Created by Tory Chen, Saheen Jey, Bobby Liang, Richard Liu
             </Typography>
             <Copyright />
         </Box>
