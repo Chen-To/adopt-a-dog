@@ -32,10 +32,18 @@ function Copyright() {
 const theme = createTheme();
 
 export const HomePage = (props) => {
+    const instructionsRef = useRef(null);
     const displayAnimalRef = useRef(null);
 
-    const handleScroll = () => {
-        if (displayAnimalRef?.current) {
+
+    const handleScrollInstructions = () => {
+        if (instructionsRef && instructionsRef?.current) {
+            instructionsRef.current.scrollIntoView({behaviour: "smooth"});
+        }
+    }
+
+    const handleScrollDisplayAnimal = () => {
+        if (displayAnimalRef && displayAnimalRef?.current) {
             displayAnimalRef.current.scrollIntoView({behaviour : "smooth"});
         }
     }
@@ -78,7 +86,7 @@ export const HomePage = (props) => {
                     spacing={2}
                     justifyContent="center"
                     >
-                    <Button onClick = {(e) => handleScroll()} variant="contained">Adopt Now</Button>
+                    <Button onClick = {(e) => handleScrollInstructions()} variant="contained">Adopt Now</Button>
                     </Stack>
                  </Box> 
             </Container>
@@ -95,7 +103,7 @@ export const HomePage = (props) => {
             <Box sx={{ p: 26 }} />
 
             <Container maxWidth="sm">
-            <Box sx={{ p: 3 }} />
+            <Box sx={{ p: 3 }} ref = {instructionsRef}/>
             <Typography variant="h4" align="center" color="text.secondary" sx={{color: 'white'}} paragraph>
                 What you need to do:
             </Typography>
@@ -121,14 +129,14 @@ export const HomePage = (props) => {
             </Typography>
             </Container>
         
-            <Box sx={{ p: 3 }} />
-            <Stack
-                    sx={{ pt: 4 }}
+            <Box sx={{ m: 3 }} />
+            <Stack 
+                    sx={{ mt: 4 }}
                     direction="row"
                     spacing={2}
                     justifyContent="center"
                     >
-                    <Button onClick = {(e) => handleScroll()} variant="contained">Begin!</Button>
+                    <Button onClick = {(e) => handleScrollDisplayAnimal()} variant="contained">Begin!</Button>
                     </Stack>
 
         {/* APP ITSELF GOES HERE */}
