@@ -96,16 +96,16 @@ export const HomePage = (props) => {
                 width: "100%",
                 height: 3500,
                 backgroundSize: "cover",
-                backgroundImage: `url(https://i.imgur.com/9rQZW8j.jpeg)`
+                backgroundImage: `url(https://i.imgur.com/vtnoR4G.jpeg)`
             }}
             >
 
-            <Box sx={{ p: 26 }} />
+            <Box sx={{ p: 30 }} />
 
             <Container maxWidth="sm">
             <Box sx={{ p: 3 }} ref = {instructionsRef}/>
-            <Typography variant="h4" align="center" color="text.secondary" sx={{color: 'white'}} paragraph>
-                What you need to do:
+            <Typography variant="h3" align="center" color="text.secondary" sx={{color: 'white'}} paragraph>
+                Instructions:
             </Typography>
             <Box sx={{ p: 2 }}/>
             <Box sx={{ borderRadius: 1, borderColor:'secondary.main'}}/>
@@ -135,7 +135,7 @@ export const HomePage = (props) => {
             </Typography>
             </Container>
         
-            <Box sx={{ m: 3 }} />
+            <Box sx={{ m: 12 }} />
             <Stack 
                     sx={{ mt: 4 }}
                     direction="row"
@@ -147,7 +147,7 @@ export const HomePage = (props) => {
 
         {/* APP ITSELF GOES HERE */}
 
-        <Box sx={{ p: 71 }} />
+        <Box sx={{ p: 52 }} />
 
         <Box ref = {displayAnimalRef}>
             <Container align = "center">
