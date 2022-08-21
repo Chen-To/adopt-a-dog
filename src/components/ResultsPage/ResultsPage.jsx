@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from "prop-types";
+import GeneralStatistics from './GeneralStatistics.jsx';
 import { Tabs, Tab, Box, Typography } from "@mui/material"
 import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
@@ -70,7 +71,7 @@ export const ResultsPage = (props) => {
             Summary
         </TabPanel>
         <TabPanel value={value} index={1}>
-            General Statistics
+            <GeneralStatistics dogsSelected = {props.dogsSelected}/>
         </TabPanel>
         </Box>
     );
