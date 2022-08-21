@@ -74,7 +74,7 @@ export const ResultsPage = (props) => {
               <Button fullWidth = {false} onClick = {(e) => handleBackButton()}>Back</Button>
             </Container>
             <Container sx={{position: "relative"}}>
-              <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" fullWidth = {true} centered >
+              <Tabs value={value} onChange={handleChange} aria-label="basic tabs example"  centered >
                   <Tab icon = {<SummarizeIcon/>} label="Photo Gallery" {...a11yProps(0)} />
                   <Tab icon = {<TableChartTwoToneIcon/>} label="General Statistics" {...a11yProps(1)} />
               </Tabs>

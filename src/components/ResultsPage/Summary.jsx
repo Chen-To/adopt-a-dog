@@ -13,18 +13,18 @@ export const Summary = (props) => {
                     gridTemplateColumns: "repeat(auto-fill,minmax(124px,1fr)) !important",
                 }} columns = {3} rowHeight={1} justify="space-between">
                 
-                {props.dogsSelected.map(items=> (
-                    <Card sx={{height: 240}} key={items.photo}>
-                        <CardContent>
-                        <ImageListItem key={items.photo}>
-                            <img src={items.photo} alt={items.breed} loading ='lazy'></img>
-                            <Typography text-align="center">{items.breed}</Typography>
-                        </ImageListItem>
-                        </CardContent >
-                        
-                    </Card>
+                {props.dogsSelected.map((items) => 
+                    {return items.liked ? 
+                        <Card sx={{height: 240}} key={items.photo}>
+                            <CardContent>
+                                <ImageListItem key={items.photo}>
+                                    <img src={items.photo} alt={items.breed} loading ='lazy'></img>
+                                    <Typography text-align="center">{items.breed}</Typography>
+                                </ImageListItem>
+                            </CardContent >
+                        </Card> : null}
                     
-                ))}
+                )}
                 </ImageList>
             </Box>
             
