@@ -55,7 +55,7 @@ export const HomePage = (props) => {
                  backgroundImage: `url(https://i.imgur.com/bAte9uh.jpeg)`
                }}
             >
-            <Box sx={{ p: 12 }} />
+            <Box sx={{ p: 11 }} />
             <Container maxWidth="sm">
                 <Box  sx={{ p: 5 }} bgcolor="transparent"> 
                 
