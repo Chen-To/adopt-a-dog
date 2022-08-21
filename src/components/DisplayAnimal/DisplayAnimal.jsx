@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Card, CardContent, CardMedia, CardActions, Typography, IconButton } from "@mui/material";
 import PetsIcon from '@mui/icons-material/Pets';
 import CancelIcon from '@mui/icons-material/Cancel';
+import PanToolIcon from '@mui/icons-material/PanTool';
 
 const maxNum = 100;
 const breedRegex = /\/breeds\/(.+)\//;
@@ -71,13 +72,22 @@ export const DisplayAnimal = (props) => {
                         {animalImage ? animalImage?.breed ? `${animalImage?.subBreed} ${animalImage.breed}` : "" : "" }
                     </Typography>
                     <CardActions>
-                        <IconButton onClick = {(e) => handleReaction("disliked")} color = "error" sx={{ml: 5, mr: 25}}>
+                        <IconButton onClick = {(e) => handleReaction("disliked")} color = "error" sx={{ml: 0, mr: 15}}>
                             <CancelIcon 
                             style={{
                                 minWidth: "60px",
                                 minHeight: "60px"
                               }}/>
                         </IconButton>
+
+                        <IconButton onClick = {(e) => handleReaction("disliked")} color = "error" sx={{ml: 15, mr: 15}}>
+                            <PanToolIcon 
+                            style={{
+                                minWidth: "15px",
+                                minHeight: "15px"
+                              }}/>
+                        </IconButton>
+
                         <IconButton onClick = {(e) => handleReaction("liked")} color = "success">
                             <PetsIcon 
                             fontSize = "large"
