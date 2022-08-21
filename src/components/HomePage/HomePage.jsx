@@ -113,13 +113,19 @@ export const HomePage = (props) => {
                 Randomly generated dogs will appear below.
             </Typography>
             <Typography variant="h5" align="center" color="text.secondary" sx={{color: 'white'}} paragraph>
-                Click the green paw button if you love what you see.
+                Click the 
+                <Typography variant="h5" align="center" color="text.secondary" sx={{color: 'green'}} nowrap> green paw button</Typography>
+                 if you love what you see.
             </Typography>
             <Typography variant="h5" align="center" color="text.secondary" sx={{color: 'white'}} paragraph>
-                Click the red X button if the dog is not for you.
+                Click the 
+                <Typography variant="h5" align="center" color="text.secondary" sx={{color: 'red'}} nowrap> red X button</Typography>
+                 if you are not interested.
             </Typography>
             <Typography variant="h5" align="center" color="text.secondary" sx={{color: 'white'}} paragraph>
-                Click the red hand button to stop your selection.
+                Click the 
+                <Typography variant="h5" align="center" color="text.secondary" sx={{color: 'gray'}} nowrap> grey hand button</Typography>
+                 to stop your selection.
             </Typography>
             <Typography variant="h5" align="center" color="text.secondary" sx={{color: 'white'}} paragraph>
                 At the end, we will determine which breeds you love the most!
