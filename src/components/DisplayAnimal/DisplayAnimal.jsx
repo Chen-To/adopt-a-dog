@@ -1,5 +1,6 @@
 import React, {useLayoutEffect, useState, useRef} from "react";
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 import { Card, CardContent, CardMedia, CardActions, Typography, IconButton } from "@mui/material";
 import PetsIcon from '@mui/icons-material/Pets';
 import CancelIcon from '@mui/icons-material/Cancel';
@@ -10,6 +11,7 @@ const breedRegex = /\/breeds\/(.+)\//;
 const imageSet = new Set();
 
 export const DisplayAnimal = (props) => {
+    let navigate = useNavigate();
     const [animalImage, setAnimalImage] = useState();
     const [imagesSeen, setImagesSeen] = useState(1);
     const breedArr = useRef(new Array());
@@ -18,6 +20,15 @@ export const DisplayAnimal = (props) => {
         if (imagesSeen < maxNum) {
             props.dispatch({type: reaction, photo: animalImage.photo, breed: animalImage.breed, subBreed: animalImage.subBreed});
             setImagesSeen(imagesSeen+1);
+        }
+    }
+
+    const handleResultsRedirect = async (e) => {
+        if (imagesSeen >= 10) {
+            navigate("./results");
+        }
+        else {
+            alert("Please react to at least 10 dog images");
         }
     }
 
@@ -80,7 +91,7 @@ export const DisplayAnimal = (props) => {
                               }}/>
                         </IconButton>
 
-                        <IconButton onClick = {(e) => handleReaction("disliked")} sx={{ml: 15, mr: 15}}>
+                        <IconButton onClick = {(e) => handleResultsRedirect(e)} sx={{ml: 15, mr: 15}}>
                             <PanToolIcon 
                             style={{
                                 minWidth: "15px",
