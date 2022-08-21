@@ -14,14 +14,18 @@ export const DisplayAnimal = (props) => {
     let navigate = useNavigate();
     const [animalImage, setAnimalImage] = useState();
     const [imagesSeen, setImagesSeen] = useState(1);
+    const [apiLoad, setApiLoad] = useState("loading");
+    const [imageLoad, setImageLoad] = useState("loading");
     const breedArr = useRef(new Array());
 
     const handleReaction = (reaction) => {
-        if (imagesSeen < maxNum) {
+        if (apiLoad === "loaded" && imageLoad === "loaded" && imagesSeen < maxNum) {
             if (reaction === "liked") {
                 breedArr.current.push(animalImage.breed);
             }
             props.dispatch({type: reaction, photo: animalImage.photo, breed: animalImage.breed, subBreed: animalImage.subBreed});
+            setApiLoad("loading");
+            setImageLoad("loading");
             setImagesSeen(imagesSeen+1);
         }
     }
@@ -68,6 +72,7 @@ export const DisplayAnimal = (props) => {
                     else {
                         setAnimalImage({photo: info.message, breed: breed, subBreed: ""});
                     }
+                    setApiLoad("loaded");
                 }
             }
         }
@@ -77,11 +82,11 @@ export const DisplayAnimal = (props) => {
     return (
         <>
             <Card sx = {{ maxWidth: 620, maxHeight: 1000 }}>
-                <CardMedia component = "img" height = "670" image = {animalImage ? animalImage.photo : null} >
+                <CardMedia component = "img" height = "670" image = {animalImage ? animalImage.photo : null} onLoad = {(e) => setImageLoad("loaded")}>
                 </CardMedia>
                 <CardContent style={{backgroundColor: ""}}>
                     <Typography gutterBottom variant = "h5" component = "div">
-                        {animalImage ? animalImage?.breed ? `${animalImage?.subBreed} ${animalImage.breed}` : "" : "" }
+                        {animalImage ? animalImage?.breed && imageLoad ==="loaded" ? `${animalImage?.subBreed} ${animalImage.breed}` : "" : "" }
                     </Typography>
                     <CardActions>
                         <IconButton onClick = {(e) => handleReaction("disliked")} color = "error" sx={{ml: 0, mr: 16}}>

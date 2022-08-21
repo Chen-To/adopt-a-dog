@@ -54,7 +54,9 @@ export const GeneralStatistics = (props) => {
                             <TableCell>{row.breed.substring(0,1).toUpperCase() + row.breed.substring(1)}</TableCell>
                             <TableCell>{row.liked}</TableCell>
                             <TableCell>{row.disliked}</TableCell>
-                            <TableCell sx = {calculatePercentage(row.liked, row.disliked) > 50 ? {color: "green"} : {color: "red"}}>{calculatePercentage(row.liked, row.disliked) + "%"}</TableCell>
+                            <TableCell sx = {calculatePercentage(row.liked, row.disliked) > 50 ? {color: "green"} : {color: "red"}}>
+                                {calculatePercentage(row.liked, row.disliked) + "%"}
+                            </TableCell>
                         </TableRow>
                     ))}
                 </TableBody>
