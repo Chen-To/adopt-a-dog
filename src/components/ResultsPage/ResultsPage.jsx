@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from "prop-types";
 import GeneralStatistics from './GeneralStatistics.jsx';
-import { Tabs, Tab, Box, Typography } from "@mui/material";
+import { Tabs, Tab, Box, Typography, Button } from "@mui/material";
 import TableChartTwoToneIcon from '@mui/icons-material/TableChartTwoTone';
 import SummarizeIcon from '@mui/icons-material/Summarize';
+import { useNavigate } from "react-router-dom";
 import AppBar from '@mui/material/AppBar';
-import Button from '@mui/material/Button';
 import CameraIcon from '@mui/icons-material/PhotoCamera';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -23,7 +23,12 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { DisplayAnimal } from "../DisplayAnimal/DisplayAnimal.jsx";
 
 export const ResultsPage = (props) => {
+    let navigate = useNavigate();
     const [value, setValue] = useState(0);
+
+    const handleBackButton = (event) => {
+      navigate("../");
+    }
 
     function TabPanel(props) {
         const { children, value, index, ...other } = props;
@@ -63,11 +68,16 @@ export const ResultsPage = (props) => {
       
     return (
         <Box sx={{ width: '100%' }}>
-        <Box sx={{ borderBottom: 1, borderColor: 'divider'}} >
-            <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" fullWidth = {true} centered>
-                <Tab icon = {<SummarizeIcon/>} label="Summary" {...a11yProps(0)} />
-                <Tab icon = {<TableChartTwoToneIcon/>} label="General Statistics" {...a11yProps(1)} />
-            </Tabs>
+        <Box sx={{ borderBottom: 1, borderColor: 'divider'}} display = "flex">
+            <Container sx={{position: "absolute"}}>
+              <Button fullWidth = {false} onClick = {(e) => handleBackButton()}>Back</Button>
+            </Container>
+            <Container sx={{position: "relative"}}>
+              <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" fullWidth = {true} centered >
+                  <Tab icon = {<SummarizeIcon/>} label="Summary" {...a11yProps(0)} />
+                  <Tab icon = {<TableChartTwoToneIcon/>} label="General Statistics" {...a11yProps(1)} />
+              </Tabs>
+            </Container>
         </Box>
         <TabPanel value={value} index={0}>
             Summary
