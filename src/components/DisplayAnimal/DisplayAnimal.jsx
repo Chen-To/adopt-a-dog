@@ -31,7 +31,7 @@ export const DisplayAnimal = (props) => {
     }
 
     const handleResultsRedirect = async (e) => {
-        if (imagesSeen >= 10) {
+        if (imagesSeen >= 11) {
             navigate("./results");
         }
         else {
