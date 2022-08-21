@@ -86,9 +86,25 @@ export const HomePage = (props) => {
         </div>
         {/* APP ITSEF GOES HERE */}
 
-        <Box sx={{ p: 25 }} />
+        <div 
+            style={{
+            width: "100%",
+            height: 2000,
+            backgroundSize: "cover",
+            backgroundImage: `url(https://www.wallpapertip.com/wmimgs/128-1289792_lg-q6-wallpaper-black.jpg)`
+        }}
+        ></div>
+        
 
-        <Box ref = {displayAnimalRef}>
+        {/* <Box sx={{ p: 25 }} /> */}
+
+        <Box ref = {displayAnimalRef}
+        style={{
+            width: "100%",
+            height: 1000,
+            backgroundSize: "cover",
+            backgroundImage: `url(https://www.wallpapertip.com/wmimgs/128-1289792_lg-q6-wallpaper-black.jpg)`
+        }}>
             <Container align = "center">
                 <DisplayAnimal dispatch = {props.dispatch}/>
             </Container>
