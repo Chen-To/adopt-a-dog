@@ -20,7 +20,7 @@ function Copyright() {
     <Typography variant="body2" color="text.secondary" align="center">
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        Adopt A Dog Website
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -96,16 +96,16 @@ export const HomePage = (props) => {
                 width: "100%",
                 height: 3500,
                 backgroundSize: "cover",
-                backgroundImage: `url(https://i.imgur.com/9rQZW8j.jpeg)`
+                backgroundImage: `url(https://i.imgur.com/vtnoR4G.jpeg)`
             }}
             >
 
-            <Box sx={{ p: 26 }} />
+            <Box sx={{ p: 30 }} />
 
             <Container maxWidth="sm">
             <Box sx={{ p: 3 }} ref = {instructionsRef}/>
-            <Typography variant="h4" align="center" color="text.secondary" sx={{color: 'white'}} paragraph>
-                What you need to do:
+            <Typography variant="h3" align="center" color="text.secondary" sx={{color: 'white'}} paragraph>
+                Instructions:
             </Typography>
             <Box sx={{ p: 2 }}/>
             <Box sx={{ borderRadius: 1, borderColor:'secondary.main'}}/>
@@ -113,13 +113,19 @@ export const HomePage = (props) => {
                 Randomly generated dogs will appear below.
             </Typography>
             <Typography variant="h5" align="center" color="text.secondary" sx={{color: 'white'}} paragraph>
-                Click the green paw button if you love what you see.
+                Click the 
+                <Typography variant="h5" align="center" color="text.secondary" sx={{color: 'green'}} nowrap> green paw button</Typography>
+                 if you love what you see.
             </Typography>
             <Typography variant="h5" align="center" color="text.secondary" sx={{color: 'white'}} paragraph>
-                Click the red X button if the dog is not for you.
+                Click the 
+                <Typography variant="h5" align="center" color="text.secondary" sx={{color: 'red'}} nowrap> red X button</Typography>
+                 if you are not interested.
             </Typography>
             <Typography variant="h5" align="center" color="text.secondary" sx={{color: 'white'}} paragraph>
-                Click the red hand button to stop your selection.
+                Click the 
+                <Typography variant="h5" align="center" color="text.secondary" sx={{color: 'gray'}} nowrap> grey hand button</Typography>
+                 to stop your selection.
             </Typography>
             <Typography variant="h5" align="center" color="text.secondary" sx={{color: 'white'}} paragraph>
                 At the end, we will determine which breeds you love the most!
@@ -129,7 +135,7 @@ export const HomePage = (props) => {
             </Typography>
             </Container>
         
-            <Box sx={{ m: 3 }} />
+            <Box sx={{ m: 12 }} />
             <Stack 
                     sx={{ mt: 4 }}
                     direction="row"
@@ -141,7 +147,7 @@ export const HomePage = (props) => {
 
         {/* APP ITSELF GOES HERE */}
 
-        <Box sx={{ p: 71 }} />
+        <Box sx={{ p: 52 }} />
 
         <Box ref = {displayAnimalRef}>
             <Container align = "center">
