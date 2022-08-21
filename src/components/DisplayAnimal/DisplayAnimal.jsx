@@ -85,9 +85,6 @@ export const DisplayAnimal = (props) => {
                 <CardMedia component = "img" height = "670" image = {animalImage ? animalImage.photo : null} onLoad = {(e) => setImageLoad("loaded")}>
                 </CardMedia>
                 <CardContent style={{backgroundColor: ""}}>
-                    <Typography gutterBottom variant = "h5" component = "div">
-                        {animalImage ? animalImage?.breed && imageLoad ==="loaded" ? `${animalImage?.subBreed} ${animalImage.breed}` : "" : "" }
-                    </Typography>
                     <CardActions>
                         <IconButton onClick = {(e) => handleReaction("disliked")} color = "error" sx={{ml: 0, mr: 16}}>
                             <CancelIcon 
