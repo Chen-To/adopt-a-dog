@@ -60,18 +60,17 @@ export const ResultsPage = (props) => {
       
     return (
         <Box sx={{ width: '100%' }}>
-        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-            <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-            <Tab label="Item One" {...a11yProps(0)} />
-            <Tab label="Item Two" {...a11yProps(1)} />
-            <Tab label="Item Three" {...a11yProps(2)} />
+        <Box sx={{ borderBottom: 1, borderColor: 'divider'}} >
+            <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" fullWidth = {true} centered>
+            <Tab label="Summary" {...a11yProps(0)} />
+            <Tab label="General Statistics" {...a11yProps(1)} />
             </Tabs>
         </Box>
         <TabPanel value={value} index={0}>
-            General Statistics
+            Summary
         </TabPanel>
         <TabPanel value={value} index={1}>
-            Summary
+            General Statistics
         </TabPanel>
         </Box>
     );
