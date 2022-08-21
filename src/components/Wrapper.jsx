@@ -7,9 +7,11 @@ const reducer = (state, action) => {
     switch (action.type) {
         case "liked":
             state.push({photo: action?.photo, breed: action?.breed, subBreed: action?.subBreed, liked: true});
+            console.log(state);
             return state;
         case "disliked": 
             state.push({photo: action?.photo, breed: action?.breed, subBreed: action?.subBreed, liked: false});
+            console.log(state);
             return state;
         default:
             throw new Error("Invalid Dispatch");
