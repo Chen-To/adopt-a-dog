@@ -80,7 +80,7 @@ export const DisplayAnimal = (props) => {
                               }}/>
                         </IconButton>
 
-                        <IconButton onClick = {(e) => handleReaction("disliked")} color = "error" sx={{ml: 15, mr: 15}}>
+                        <IconButton onClick = {(e) => handleReaction("disliked")} sx={{ml: 15, mr: 15}}>
                             <PanToolIcon 
                             style={{
                                 minWidth: "15px",

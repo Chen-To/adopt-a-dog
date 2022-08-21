@@ -128,7 +128,7 @@ export const HomePage = (props) => {
                     spacing={2}
                     justifyContent="center"
                     >
-                    <Button onClick = {(e) => handleScroll()} variant="contained">Adopt Now</Button>
+                    <Button onClick = {(e) => handleScroll()} variant="contained">Begin!</Button>
                     </Stack>
 
         {/* APP ITSELF GOES HERE */}
