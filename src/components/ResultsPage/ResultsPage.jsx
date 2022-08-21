@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from "prop-types";
-import { Tabs, Tab, Box, Typography } from "@mui/material"
+import { Tabs, Tab, Box, Typography, ImageListItem } from "@mui/material"
 import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
 import CameraIcon from '@mui/icons-material/PhotoCamera';
@@ -18,6 +18,8 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import PetsIcon from '@mui/icons-material/Pets';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { DisplayAnimal } from "../DisplayAnimal/DisplayAnimal.jsx";
+import {ImageList} from "@mui/material";
+import { Summary } from './Summary.jsx';
 
 export const ResultsPage = (props) => {
     const [value, setValue] = useState(0);
@@ -67,7 +69,7 @@ export const ResultsPage = (props) => {
             </Tabs>
         </Box>
         <TabPanel value={value} index={0}>
-            Summary
+            <Summary dogsSelected={props.dogsSelected}></Summary>
         </TabPanel>
         <TabPanel value={value} index={1}>
             General Statistics
