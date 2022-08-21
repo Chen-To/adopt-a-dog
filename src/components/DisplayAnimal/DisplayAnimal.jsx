@@ -75,27 +75,27 @@ export const DisplayAnimal = (props) => {
 
     return (
         <>
-            <Card sx = {{ maxWidth: 650, maxHeight: 1000 }}>
-                <CardMedia component = "img" height = "700" image = {animalImage ? animalImage.photo : null} >
+            <Card sx = {{ maxWidth: 620, maxHeight: 1000 }}>
+                <CardMedia component = "img" height = "670" image = {animalImage ? animalImage.photo : null} >
                 </CardMedia>
                 <CardContent style={{backgroundColor: ""}}>
                     <Typography gutterBottom variant = "h5" component = "div">
                         {animalImage ? animalImage?.breed ? `${animalImage?.subBreed} ${animalImage.breed}` : "" : "" }
                     </Typography>
                     <CardActions>
-                        <IconButton onClick = {(e) => handleReaction("disliked")} color = "error" sx={{ml: 0, mr: 15}}>
+                        <IconButton onClick = {(e) => handleReaction("disliked")} color = "error" sx={{ml: 0, mr: 16}}>
                             <CancelIcon 
                             style={{
-                                minWidth: "60px",
-                                minHeight: "60px"
+                                minWidth: "100px",
+                                minHeight: "100px"
                               }}/>
                         </IconButton>
 
-                        <IconButton onClick = {(e) => handleResultsRedirect(e)} sx={{ml: 15, mr: 15}}>
+                        <IconButton onClick = {(e) => handleResultsRedirect(e)} sx={{ml: 17, mr: 15}}>
                             <PanToolIcon 
                             style={{
-                                minWidth: "15px",
-                                minHeight: "15px"
+                                minWidth: "50px",
+                                minHeight: "50px"
                               }}/>
                         </IconButton>
 
@@ -103,8 +103,8 @@ export const DisplayAnimal = (props) => {
                             <PetsIcon 
                             fontSize = "large"
                             style={{
-                                minWidth: "60px",
-                                minHeight: "60px"
+                                minWidth: "100px",
+                                minHeight: "100px"
                               }}/>
                         </IconButton>
                     </CardActions>
