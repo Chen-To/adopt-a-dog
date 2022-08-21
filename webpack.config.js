@@ -8,6 +8,7 @@ module.exports = {
         "main": "./src/home.jsx"
     },
     output: {
+        publicPath: "/",
         path: path.join(__dirname, "/dist"),
     },
     plugins: [
@@ -60,11 +61,15 @@ module.exports = {
             },
             {
                 test: /\.(png|jpe?g|gif)$/,
+                type: "javascript/auto",
                 use: [
                     {
                         loader: "file-loader",
                         options: {
                             limit: 40000,
+                            name: '[name].[ext]',
+                            outputPath: "images/",
+                            publicPath: "./images/",
                         },
                     },
                 ],

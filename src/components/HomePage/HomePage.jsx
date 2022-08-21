@@ -12,6 +12,7 @@ import Link from '@mui/material/Link';
 import PetsIcon from '@mui/icons-material/Pets';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { DisplayAnimal } from "../DisplayAnimal/DisplayAnimal.jsx";
+import Paper from '@mui/material/Paper';
 
 
 function Copyright() {
@@ -47,37 +48,40 @@ export const HomePage = (props) => {
           
             {/* Hero unit */}
             <div 
-            style={{
-                width: "100%",
-                height: 800,
-                backgroundSize: "cover",
-                backgroundImage: `url(https://wallpaperaccess.com/full/266689.jpg)`
-              }}
+                 style={{
+                 width: "100%",
+                 height: 800,
+                 backgroundSize: "cover",
+                 backgroundImage: `url(https://i.imgur.com/bAte9uh.jpeg)`
+               }}
             >
-            <Box sx={{ p: 7 }} />
+            <Box sx={{ p: 12 }} />
             <Container maxWidth="sm">
-                <Typography
-                    component="h1"
-                    variant="h2"
-                    align="center"
-                    color="text.primary"
-                    gutterBottom
-                >
-                <PetsIcon sx={{ mr: 2, fontSize: 40}} />
-                Adopt A Dog
-                <PetsIcon sx={{ ml: 2, fontSize: 40}} />
-                </Typography>
-                <Typography variant="h5" align="center" color="text.secondary" paragraph>
-                Stuck on deciding the perfect type of dog for you? Welcome to Adopt A Dog, an app to match you with your new furry friend!
-                </Typography>
-                <Stack
-                sx={{ pt: 4 }}
-                direction="row"
-                spacing={2}
-                justifyContent="center"
-                >
-                <Button onClick = {(e) => handleScroll()} variant="contained">Adopt Now</Button>
-                </Stack>
+                <Box  sx={{ p: 5 }} bgcolor="transparent"> 
+                
+                    <Typography
+                        component="h1"
+                        variant="h2"
+                        align="center"
+                        color="text.primary"
+                        gutterBottom
+                    >
+                    <PetsIcon sx={{ mr: 2, fontSize: 40}} />
+                    Adopt A Dog
+                    <PetsIcon sx={{ ml: 2, fontSize: 40}} />
+                    </Typography>
+                    <Typography variant="h5" align="center" color="text.secondary" paragraph>
+                    Stuck on deciding the perfect type of dog for you? Welcome to Adopt A Dog, an app to match you with your new furry friend!
+                    </Typography>
+                    <Stack
+                    sx={{ pt: 4 }}
+                    direction="row"
+                    spacing={2}
+                    justifyContent="center"
+                    >
+                    <Button onClick = {(e) => handleScroll()} variant="contained">Adopt Now</Button>
+                    </Stack>
+                 </Box> 
             </Container>
         </div>
         {/* APP ITSEF GOES HERE */}
