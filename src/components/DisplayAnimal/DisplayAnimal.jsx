@@ -75,8 +75,8 @@ export const DisplayAnimal = (props) => {
 
     return (
         <>
-            <Card sx = {{ maxWidth: 500, maxHeight: 700 }}>
-                <CardMedia component = "img" height = "540" image = {animalImage ? animalImage.photo : null} >
+            <Card sx = {{ maxWidth: 650, maxHeight: 1000 }}>
+                <CardMedia component = "img" height = "700" image = {animalImage ? animalImage.photo : null} >
                 </CardMedia>
                 <CardContent style={{backgroundColor: ""}}>
                     <Typography gutterBottom variant = "h5" component = "div">
