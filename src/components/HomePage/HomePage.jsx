@@ -37,7 +37,6 @@ export const HomePage = (props) => {
     const handleScroll = () => {
         if (displayAnimalRef?.current) {
             displayAnimalRef.current.scrollIntoView({behaviour : "smooth"});
-            console.log("HERE");
         }
     }
 
@@ -55,7 +54,7 @@ export const HomePage = (props) => {
                  backgroundImage: `url(https://i.imgur.com/bAte9uh.jpeg)`
                }}
             >
-            <Box sx={{ p: 11 }} />
+            <Box sx={{ p: 16 }} />
             <Container maxWidth="sm">
                 <Box  sx={{ p: 5 }} bgcolor="transparent"> 
                 
@@ -87,13 +86,13 @@ export const HomePage = (props) => {
         <div 
             style={{
                 width: "100%",
-                height: 3000,
+                height: 3500,
                 backgroundSize: "cover",
                 backgroundImage: `url(https://i.imgur.com/9rQZW8j.jpeg)`
             }}
             >
 
-            <Box sx={{ p: 22 }} />
+            <Box sx={{ p: 26 }} />
 
             <Container maxWidth="sm">
             <Box sx={{ p: 3 }} />
@@ -134,7 +133,7 @@ export const HomePage = (props) => {
 
         {/* APP ITSELF GOES HERE */}
 
-        <Box sx={{ p: 47 }} />
+        <Box sx={{ p: 71 }} />
 
         <Box ref = {displayAnimalRef}>
             <Container align = "center">
