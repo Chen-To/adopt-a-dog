@@ -2,8 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from "@mui/material";
 import { useEffect, useState } from "react";
-import { RowingSharp } from "@mui/icons-material";
 
+const calculatePercentage = (likedAmount, dislikedAmount) => {
+    return Math.round((likedAmount / (likedAmount + dislikedAmount)) * 1000) / 10;
+}
 
 export const GeneralStatistics = (props) => {
     const [processedStatistics, setProcessedStatistics] = useState([]);
@@ -49,10 +51,10 @@ export const GeneralStatistics = (props) => {
                 <TableBody>
                     {processedStatistics.map((row) => (
                         <TableRow key = {row.breed}>
-                            <TableCell>{row.breed}</TableCell>
+                            <TableCell>{row.breed.substring(0,1).toUpperCase() + row.breed.substring(1)}</TableCell>
                             <TableCell>{row.liked}</TableCell>
                             <TableCell>{row.disliked}</TableCell>
-                            <TableCell>{row.breed}</TableCell>
+                            <TableCell sx = {calculatePercentage(row.liked, row.disliked) > 50 ? {color: "green"} : {color: "red"}}>{calculatePercentage(row.liked, row.disliked) + "%"}</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>
