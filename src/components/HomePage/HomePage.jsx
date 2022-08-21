@@ -84,15 +84,95 @@ export const HomePage = (props) => {
                  </Box> 
             </Container>
         </div>
+
+
+        <div 
+            style={{
+                width: "100%",
+                height: 800,
+              }}
+            >
+        <Container maxWidth="sm">
+<Typography variant="h4" align="center" color="text.secondary" paragraph>
+What you need to do.
+</Typography>
+  <Box sx={{ p: 2 }}/>
+  <Box sx={{ borderRadius: 1, borderColor:'secondary.main'}}/>
+<Typography variant="h5" align="center" color="text.secondary" paragraph>
+Randomly generated dogs will appear below.
+</Typography>
+<Typography variant="h5" align="center" color="text.secondary" paragraph>
+Click the green paw button if you love what you see.
+</Typography>
+<Typography variant="h5" align="center" color="text.secondary" paragraph>
+Click the red X button if the dog is not for you.
+</Typography>
+<Typography variant="h5" align="center" color="text.secondary" paragraph>
+At the end, we will determine which breeds you love the most!
+</Typography>
+<Typography variant="h5" align="center" color="text.secondary" paragraph>
+  How many dogs would you like to see?
+  </Typography>
+  <Stack
+                sx={{ pt: 4 }}
+                direction="row"
+                spacing={2}
+                justifyContent="center"
+                >
+                <Button onClick = {(e) => handleScroll()} variant="contained">Enter Number of Dogs</Button>
+                </Stack>
+</Container>
+        </div>
+
+
         {/* APP ITSEF GOES HERE */}
 
-        <Box sx={{ p: 25 }} />
+        <Box sx={{ p: 3 }} />
 
         <Box ref = {displayAnimalRef}>
             <Container align = "center">
                 <DisplayAnimal dispatch = {props.dispatch}/>
             </Container>
         </Box>
+
+
+        <div 
+            style={{
+                width: "100%",
+                height: 800,
+              }}
+            >
+        <Container maxWidth="sm">
+<Typography variant="h4" align="center" color="text.secondary" paragraph>
+What you need to do.
+</Typography>
+  <Box sx={{ p: 2 }}/>
+  <Box sx={{ borderRadius: 1, borderColor:'secondary.main'}}/>
+<Typography variant="h5" align="center" color="text.secondary" paragraph>
+Randomly generated dogs will appear below.
+</Typography>
+<Typography variant="h5" align="center" color="text.secondary" paragraph>
+Click the green paw button if you love what you see.
+</Typography>
+<Typography variant="h5" align="center" color="text.secondary" paragraph>
+Click the red X button if the dog is not for you.
+</Typography>
+<Typography variant="h5" align="center" color="text.secondary" paragraph>
+At the end, we will determine which breeds you love the most!
+</Typography>
+<Typography variant="h5" align="center" color="text.secondary" paragraph>
+  How many dogs would you like to see?
+  </Typography>
+  <Stack
+                sx={{ pt: 4 }}
+                direction="row"
+                spacing={2}
+                justifyContent="center"
+                >
+                <Button onClick = {(e) => handleScroll()} variant="contained">Enter Number of Dogs</Button>
+                </Stack>
+</Container>
+        </div>
 
         </main>
       {/* Footer */}
