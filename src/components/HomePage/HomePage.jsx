@@ -84,9 +84,42 @@ export const HomePage = (props) => {
                  </Box> 
             </Container>
         </div>
-        {/* APP ITSEF GOES HERE */}
 
-        <Box sx={{ p: 25 }} />
+
+        <div 
+            style={{
+                width: "100%",
+                height: 800,
+              }}
+            >
+        <Container maxWidth="sm">
+        <Box sx={{ p: 3 }} />
+<Typography variant="h4" align="center" color="text.secondary" paragraph>
+What you need to do.
+</Typography>
+  <Box sx={{ p: 2 }}/>
+  <Box sx={{ borderRadius: 1, borderColor:'secondary.main'}}/>
+<Typography variant="h5" align="center" color="text.secondary" paragraph>
+Randomly generated dogs will appear below.
+</Typography>
+<Typography variant="h5" align="center" color="text.secondary" paragraph>
+Click the green paw button if you love what you see.
+</Typography>
+<Typography variant="h5" align="center" color="text.secondary" paragraph>
+Click the red X button if the dog is not for you.
+</Typography>
+<Typography variant="h5" align="center" color="text.secondary" paragraph>
+At the end, we will determine which breeds you love the most!
+</Typography>
+<Typography variant="h5" align="center" color="text.secondary" paragraph>
+  Note: Please make a selection of at least 10 dogs.
+  </Typography>
+</Container>
+        </div>
+
+        {/* APP ITSELF GOES HERE */}
+
+        <Box sx={{ p: 3 }} />
 
         <Box ref = {displayAnimalRef}>
             <Container align = "center">
