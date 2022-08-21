@@ -86,17 +86,7 @@ export const HomePage = (props) => {
         </div>
         {/* APP ITSEF GOES HERE */}
 
-        <div 
-            style={{
-            width: "100%",
-            height: 2000,
-            backgroundSize: "cover",
-            backgroundImage: `url(https://www.wallpapertip.com/wmimgs/128-1289792_lg-q6-wallpaper-black.jpg)`
-        }}
-        ></div>
-        
-
-        {/* <Box sx={{ p: 25 }} /> */}
+        <Box sx={{ p: 25 }} />
 
         <Box ref = {displayAnimalRef}
         style={{
