@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from "@mui/material";
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Link, Box, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 
 const calculatePercentage = (likedAmount, dislikedAmount) => {
@@ -38,30 +38,35 @@ export const GeneralStatistics = (props) => {
     }, [props.dogsSelected]);
 
     return (
-        <TableContainer>
-            <Table>
-                <TableHead>
-                    <TableRow>
-                        <TableCell>Breed</TableCell>
-                        <TableCell>Liked Amount</TableCell>
-                        <TableCell>Disliked Amount</TableCell>
-                        <TableCell>Liked Percentage</TableCell>
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                    {processedStatistics.map((row) => (
-                        <TableRow key = {row.breed}>
-                            <TableCell>{row.breed.substring(0,1).toUpperCase() + row.breed.substring(1)}</TableCell>
-                            <TableCell>{row.liked}</TableCell>
-                            <TableCell>{row.disliked}</TableCell>
-                            <TableCell sx = {calculatePercentage(row.liked, row.disliked) > 50 ? {color: "green"} : {color: "red"}}>
-                                {calculatePercentage(row.liked, row.disliked) + "%"}
-                            </TableCell>
+        <>
+            <TableContainer>
+                <Table>
+                    <TableHead>
+                        <TableRow>
+                            <TableCell>Breed</TableCell>
+                            <TableCell>Liked Amount</TableCell>
+                            <TableCell>Disliked Amount</TableCell>
+                            <TableCell>Liked Percentage</TableCell>
                         </TableRow>
-                    ))}
-                </TableBody>
-            </Table>
-        </TableContainer>
+                    </TableHead>
+                    <TableBody>
+                        {processedStatistics.map((row) => (
+                            <TableRow key = {row.breed}>
+                                <TableCell>{row.breed.substring(0,1).toUpperCase() + row.breed.substring(1)}</TableCell>
+                                <TableCell>{row.liked}</TableCell>
+                                <TableCell>{row.disliked}</TableCell>
+                                <TableCell sx = {calculatePercentage(row.liked, row.disliked) > 50 ? {color: "green"} : {color: "red"}}>
+                                    {calculatePercentage(row.liked, row.disliked) + "%"}
+                                </TableCell>
+                            </TableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+            </TableContainer>
+            <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer" align = "center ">
+                <Link href = "https://www.petfinder.com/" >Find Potential Adoption Opportunities</Link>
+            </Box>
+        </>
     );
 }
 
