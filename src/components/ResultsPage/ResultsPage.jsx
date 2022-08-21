@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import GeneralStatistics from './GeneralStatistics.jsx';
 import { Tabs, Tab, Box, Typography } from "@mui/material";
 import TableChartTwoToneIcon from '@mui/icons-material/TableChartTwoTone';
+import SummarizeIcon from '@mui/icons-material/Summarize';
 import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
 import CameraIcon from '@mui/icons-material/PhotoCamera';
@@ -64,7 +65,7 @@ export const ResultsPage = (props) => {
         <Box sx={{ width: '100%' }}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider'}} >
             <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" fullWidth = {true} centered>
-                <Tab label="Summary" {...a11yProps(0)} />
+                <Tab icon = {<SummarizeIcon/>} label="Summary" {...a11yProps(0)} />
                 <Tab icon = {<TableChartTwoToneIcon/>} label="General Statistics" {...a11yProps(1)} />
             </Tabs>
         </Box>

@@ -18,6 +18,9 @@ export const DisplayAnimal = (props) => {
 
     const handleReaction = (reaction) => {
         if (imagesSeen < maxNum) {
+            if (reaction === "liked") {
+                breedArr.current.push(animalImage.breed);
+            }
             props.dispatch({type: reaction, photo: animalImage.photo, breed: animalImage.breed, subBreed: animalImage.subBreed});
             setImagesSeen(imagesSeen+1);
         }
@@ -39,7 +42,7 @@ export const DisplayAnimal = (props) => {
             let photoStatus = true;
             const randomChance = Math.random();
             while (photoStatus) {
-                if (!animalImage || randomChance >= 0.5) {
+                if (breedArr.current.length === 0 || randomChance >= 0.5) {
                     resp = await fetch("https://dog.ceo/api/breeds/image/random");
                     info = await resp.json();
                 }
@@ -60,11 +63,9 @@ export const DisplayAnimal = (props) => {
                     const breed = breedMatch?.[1];
                     const breedOrSubBreed = breed.split("-");
                     if (breedOrSubBreed.length > 1) {
-                        breedArr.current.push(breedOrSubBreed[0]);
                         setAnimalImage({photo: info.message, breed: breedOrSubBreed[0], subBreed: breedOrSubBreed[1]})
                     }
                     else {
-                        breedArr.current.push(breed);
                         setAnimalImage({photo: info.message, breed: breed, subBreed: ""});
                     }
                 }
