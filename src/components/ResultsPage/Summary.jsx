@@ -13,13 +13,13 @@ export const Summary = (props) => {
                 }} columns = {3} rowHeight={1} justify="space-between">
                 
                 {props.dogsSelected.map(items=> (
-                    <Card sx={{width:200, height: 200}} key={items.photo}>
+                    <Card sx={{height: 350}} key={items.photo}>
                         <CardContent>
                         <ImageListItem key={items.photo}>
-                            <img src={items.photo} alt={items.breed} loading ='lazy' ></img>
+                            <img src={items.photo} alt={items.breed} loading ='lazy'></img>
                             <Typography>{items.breed}</Typography>
                         </ImageListItem>
-                        </CardContent>
+                        </CardContent >
                         
                     </Card>
                     
